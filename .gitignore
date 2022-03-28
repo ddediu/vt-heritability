@@ -34,6 +34,35 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+code/3_analysis_files/*
 
 # R Environment Variables
 .Renviron
+
+# macOS files
+*.DS_Store
+
+# Full analysis report
+code/3_analysis.html
+
+# Ignore the TIFF version of the figures
+figures/*.tiff
+
+# Ignore the really big files:
+/figures/figure_03.xcf
+/code/full_analysis_report.html.tar.xz
+
+# Data that needs a request to NTR:
+_restricted_data.tar.bz2
+_restricted_data/
+data/input/measures.csv
+data/intermediate/data_for_SEM.csv
+
+# Generating the paper:
+results_for_paper/
+submission/
+4_main_paper*
+4_suppl_mats*
+apa-6th-edition.csl
+
+

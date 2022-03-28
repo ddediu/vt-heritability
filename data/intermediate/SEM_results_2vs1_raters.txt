@@ -1,0 +1,23 @@
+N.B. ΔAIC = AIC(2 rates model) - AIC(1 rate model):
+
+Fine-grained ΔAIC guidelines (10 and 2 AIC points):
+Phenotypes clearly supporting 2 rates (ΔAIC < -10) = 0 (0%)
+Phenotypes suggestively supporting 2 rates (-10 <= ΔAIC < -2) = 0 (0%)
+Phenotypes where 2 raters and 1 rate are equivalent (-2 <= ΔAIC <= 2) = 140 (93.3%)
+Phenotypes suggestively supporting 1 rate (2 < ΔAIC <= 10) = 8 (5.3%)
+Phenotypes clearly supporting 1 rate1 (ΔAIC > 10) = 2 (1.3%)
+
+Blunt ΔAIC guidelines (2 AIC points):
+Phenotypes supporting 2 rates (ΔAIC < -2) = 0 (0%)
+Phenotypes where 2 raters and 1 rate are equivalent (-2 <= ΔAIC <= 2) = 140 (93.3%)
+Phenotypes supporting 1 rate (2 < ΔAIC) = 10 (6.7%)
+
+Just negative and positive ΔAIC:
+Phenotypes with ΔAIC < 0 = 122 (81.3%)
+Phenotypes with ΔAIC > 0 = 28 (18.7%)
+
+Likelihood ratio test:
+Phenotypes with p < 0.05 = 10 (6.7%)
+Phenotypes with p < 0.05 and ΔAIC < 0 = 0 (0%)
+Phenotypes with p < 0.05 and ΔAIC > 0 = 10 (6.7%)
+

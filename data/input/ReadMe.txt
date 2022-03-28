@@ -1,0 +1,1 @@
+Pleae note that the file measures-STUB.csv is only a stub that contains the structure (i.e., the columns) but no data. For the actual data (the file measures.csv) please contact the Netherlands Twin Register (https://tweelingenregister.vu.nl/information_for_researchers/working-with-ntr-data).
