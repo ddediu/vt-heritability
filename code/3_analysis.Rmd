@@ -1,7 +1,7 @@
 ---
 title: "The heritability of vocal tract structures estimated from structural MRI in a large cohort of Dutch twins"
 subtitle: "Full analysis report"
-author: "Dan Dediu [ddediu@gmail.com] and Emily Jennings (with input from Conor Dolan)"
+author: "Dan Dediu [ddediu@gmail.com] and Emily Jennings, with input from Conor V. Dolan"
 date: "`r Sys.time()`"
 output: 
   html_document: 
@@ -17,7 +17,7 @@ editor_options:
 
 ```{r eval=FALSE, include=FALSE}
 
-# Analyse and plot the VT ph_ace estimates
+# Analyse and plot the vocal tract heritability estimates
 #
 # Copyright (C) 2019-2020, Emily Jennings
 # checked and modified by Dan Dediu, 2021-2022
@@ -40,6 +40,22 @@ editor_options:
 # Assuming the current directory is this script's directory!
 
 ```
+
+
+# Runing the analysis
+
+Please note that for running the analysis, the file `../data/input/measures.csv` must first be obtained from the [Netherlands Twin Register](https://tweelingenregister.vu.nl/information_for_researchers/working-with-ntr-data). 
+This file cannot be made public, as it contains potentially identifying information about the participants.
+Nevertheless, we provide the file `../data/input/measures-STUB.csv`, which is an empty stub, in order to show the structure of this missing file and to allow the understanding of what the code does.
+Moreover, all the other files are provided, as is all the code and the compiled full analysis report (this very document) that complements the published paper and its supplementary materials.
+
+```{r initial checks, include=FALSE, echo=FALSE}
+if( !file.exists("../data/input/measures.csv") )
+{
+  stop("Please note that for running the analysis, the file '../data/input/measures.csv' must first be obtained from the Netherlands Twin Register (https://tweelingenregister.vu.nl/information_for_researchers/working-with-ntr-data). This file cannot be made public as it contains potentially identifying information about the participants ('../data/input/measures-STUB.csv' is an empty stub to show the structure of this file)...");
+}
+```
+
 
 
 ```{r setup, include=FALSE}
@@ -2602,16 +2618,30 @@ estim_plots <- list(
 grid.arrange(grobs=estim_plots, ncol=4);
 ```
 ```{r results='hide'}
-# Save to file:
+# For the paper, plot only those involving ICC:
+estim_plots_paper <- list(
+  # h2:
+  ggplot(estim_d_all, aes(x=h2, y=ICC)) + geom_point(alpha=0.5) + xlab(expression("h"^2)) + ylab("ICC") +             ggtitle(expression("h"^2~"vs"~"ICC")) +
+    geom_smooth(method="loess", color="red", alpha=0.5) + geom_smooth(method="lm", color="blue", alpha=0.5),
+  # c2:
+  ggplot(estim_d_c2, aes(x=cd2, y=ICC)) + geom_point(alpha=0.5) + xlab(expression("c"^2)) + ylab("ICC") +             ggtitle(expression("c"^2~"vs"~"ICC")) +
+    geom_smooth(method="loess", color="red", alpha=0.5) + geom_smooth(method="lm", color="blue", alpha=0.5),
+  # d2:
+  ggplot(estim_d_d2, aes(x=cd2, y=ICC)) + geom_point(alpha=0.5) + xlab(expression("d"^2)) + ylab("ICC") +             ggtitle(expression("d"^2~"vs"~"ICC")) +
+    geom_smooth(method="loess", color="red", alpha=0.5) + geom_smooth(method="lm", color="blue", alpha=0.5),
+  # e2:
+  ggplot(estim_d_all, aes(x=e2, y=ICC)) + geom_point(alpha=0.5) + xlab(expression("e"^2)) + ylab("ICC") +             ggtitle(expression("e"^2~"vs"~"ICC")) +
+    geom_smooth(method="loess", color="red", alpha=0.5) + geom_smooth(method="lm", color="blue", alpha=0.5)
+);
 
 # As TIFF:
-tiff("../figures/figure_S02.tiff", width=4*2, height=4*2, units="in", res=600, compression="lzw");
-grid.arrange(grobs=estim_plots, ncol=4);
+tiff("../figures/figure_S02.tiff", width=2*4, height=2*4, units="in", res=600, compression="lzw");
+grid.arrange(grobs=estim_plots_paper, ncol=2);
 dev.off(); 
 
 # ... and as JPG:
-jpeg("../figures/figure_S02.jpg", width=4*2, height=4*2, units="in", res=150, quality=85);
-grid.arrange(grobs=estim_plots, ncol=4);
+jpeg("../figures/figure_S02.jpg", width=2*4, height=2*4, units="in", res=150, quality=85);
+grid.arrange(grobs=estim_plots_paper, ncol=2);
 dev.off(); 
 ```
 

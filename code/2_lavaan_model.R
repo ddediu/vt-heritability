@@ -20,6 +20,13 @@
 
 # Assuming the current directory is this script's directory!
 
+# Check if the analysis can be run at all...
+if( !file.exists("../data/input/measures.csv") )
+{
+  stop("Please note that for running the analysis, the file '../data/input/measures.csv' must first be obtained from the Netherlands Twin Register (https://tweelingenregister.vu.nl/information_for_researchers/working-with-ntr-data). This file cannot be made public as it contains potentially identifying information about the participants ('../data/input/measures-STUB.csv' is an empty stub to show the structure of this file)...");
+}
+
+
 run_start_time <- Sys.time(); # start time: takes about 40 minutes on a Core i9-10900 (10 cores) with 32Gb RAM and abut 30 mins on a Ryzen 3700X (8 cores) with 64GB RAM
 
 

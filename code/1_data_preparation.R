@@ -21,6 +21,13 @@
 # Assuming the current directory is this script's directory!
 
 
+# Check if the analysis can be run at all...
+if( !file.exists("../data/input/measures.csv") )
+{
+  stop("Please note that for running the analysis, the file '../data/input/measures.csv' must first be obtained from the Netherlands Twin Register (https://tweelingenregister.vu.nl/information_for_researchers/working-with-ntr-data). This file cannot be made public as it contains potentially identifying information about the participants ('../data/input/measures-STUB.csv' is an empty stub to show the structure of this file)...");
+}
+
+
 # Figures:
 if( !dir.exists("../figures/") ) dir.create("../figures/", showWarnings=FALSE);
 
