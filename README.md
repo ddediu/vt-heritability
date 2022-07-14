@@ -1,7 +1,7 @@
 # Code, data and results acompanying the paper "The heritability of vocal tract structures estimated from structural MRI in a large cohort of Dutch twins"
 
 This repository contains the data, code and full results supporting the paper 
-Dediu, D., Jennings, E.M., van ’t Ent, D., Moisik, S.R., Di Pisa, G., Schulze, J., de Geus, E.J.C., den Braber, A., Dolan, C.V. & Boomsma, D.I. (2022) *The heritability of vocal tract structures estimated from structural MRI in a large cohort of Dutch twins*.
+Dediu, D., Jennings, E.M., van ’t Ent, D., Moisik, S.R., Di Pisa, G., Schulze, J., de Geus, E.J.C., den Braber, A., Dolan, C.V. & Boomsma, D.I. (2022) The heritability of vocal tract structures estimated from structural MRI in a large cohort of Dutch twins. *Human Genetics*, [doi:10.1007/s00439-022-02469-2](https://link.springer.com/article/10.1007/s00439-022-02469-2)
 
 The repository is structured as follows:
 
